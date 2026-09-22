@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🌙 睡前故事 · 云端工作站</title>
+<style>
+  :root {
+    --bg: #0b1026;
+    --bg2: #141a3a;
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(167, 139, 250, 0.28);
+    --text: #e7e9f5;
+    --muted: #9aa3c7;
+    --accent: #a78bfa;     /* 紫 */
+    --accent2: #7dd3fc;    /* 夜空蓝 */
+    --ok: #4ade80;
+    --warn: #fbbf24;
+    --fail: #f87171;
+    --radius: 16px;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(124, 58, 237, 0.25), transparent 60%),
+      radial-gradient(900px 500px at 10% 10%, rgba(56, 189, 248, 0.18), transparent 55%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 44px 20px 64px; }
+  header.hero { text-align: center; margin-bottom: 36px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); margin: 0 0 10px; letter-spacing: 1px; }
+  .hero .sub { color: var(--muted); font-size: clamp(15px, 2.4vw, 19px); margin: 0 auto; max-width: 640px; }
+  .badge {
+    display: inline-block; margin-top: 16px; padding: 6px 14px; border-radius: 999px;
+    background: rgba(167, 139, 250, 0.14); border: 1px solid var(--card-border);
+    color: var(--accent); font-size: 13px;
+  }
+  h2 { font-size: 20px; margin: 34px 0 14px; display: flex; align-items: center; gap: 8px; }
+  h2 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius);
+    padding: 20px; text-decoration: none; color: var(--text); box-shadow: var(--shadow);
+    transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    display: block;
+  }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); background: rgba(167,139,250,0.12); }
+  .card .ico { font-size: 26px; }
+  .card .t { font-weight: 600; margin: 8px 0 4px; font-size: 16px; }
+  .card .d { color: var(--muted); font-size: 13px; }
+  .panel {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius);
+    padding: 20px; box-shadow: var(--shadow);
+  }
+  .status-line { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 14px; }
+  .pill { font-size: 13px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--card-border); }
+  .pill.ok { color: var(--ok); border-color: rgba(74,222,128,.4); }
+  .pill.warn { color: var(--warn); border-color: rgba(251,191,36,.4); }
+  .pill.fail { color: var(--fail); border-color: rgba(248,113,113,.4); }
+  .pill.muted { color: var(--muted); }
+  .run { border-top: 1px solid rgba(255,255,255,.07); padding: 12px 0; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .run:first-of-type { border-top: none; }
+  .run a { color: var(--accent2); text-decoration: none; font-size: 14px; }
+  .run a:hover { text-decoration: underline; }
+  .run .meta { color: var(--muted); font-size: 13px; }
+  .note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .step { background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 16px; }
+  .step .n { color: var(--accent); font-weight: 700; font-size: 14px; }
+  .step .s { font-weight: 600; margin: 6px 0 4px; }
+  .step .x { color: var(--muted); font-size: 13px; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 40px; }
+  footer a { color: var(--accent2); text-decoration: none; }
+  .loading { color: var(--muted); font-size: 14px; }
+  code { background: rgba(255,255,255,.08); padding: 1px 6px; border-radius: 6px; font-size: 12px; }
+</style>
+</head>
+<body>
+<canvas class="stars" id="stars"></canvas>
+<div class="wrap">
+  <header class="hero">
+    <h1>🌙 睡前故事 · 云端工作站</h1>
+    <p class="sub">一个能跟着你走的网址。每晚 19:00（北京时间）自动给小朋友讲一篇 3–6 岁睡前故事，
+       写稿、配音、配乐、推微信全在云端跑，不依赖任何一台固定的电脑。</p>
+    <span class="badge">📡 跑在 GitHub Actions · 人在哪都能用</span>
+  </header>
+
+  <h2><span class="dot"></span>随手操作</h2>
+  <div class="cards">
+    <a class="card" href="https://github.com/yuejingfeng912/bedtime-story-cloud/actions/workflows/daily.yml" target="_blank" rel="noopener">
+      <div class="ico">▶️</div>
+      <div class="t">触发今晚的故事</div>
+      <div class="d">手动 Run workflow，立刻生成一篇（可选只出文本 / 跳过配乐）</div>
+    </a>
+    <a class="card" href="https://github.com/yuejingfeng912/bedtime-story-cloud/actions" target="_blank" rel="noopener">
+      <div class="ico">📊</div>
+      <div class="t">查看运行状态</div>
+      <div class="d">看每次运行的日志、配音/配乐进度、是否推送成功</div>
+    </a>
+    <a class="card" href="https://github.com/yuejingfeng912/bedtime-story-cloud/tree/main/stories" target="_blank" rel="noopener">
+      <div class="ico">📚</div>
+      <div class="t">浏览故事库</div>
+      <div class="d">手工创作的离线故事（LLM_PROVIDER=none 时启用）</div>
+    </a>
+    <a class="card" href="https://github.com/yuejingfeng912/bedtime-story-cloud/actions" target="_blank" rel="noopener">
+      <div class="ico">🎧</div>
+      <div class="t">下载最新音频</div>
+      <div class="d">每次运行的 Artifacts 里有 mp3，手机直接听</div>
+    </a>
+  </div>
+
+  <h2><span class="dot"></span>实时状态</h2>
+  <div class="panel">
+    <div class="status-line" id="headline"><span class="loading">正在拉取最近的运行记录…</span></div>
+    <div id="runs"><span class="loading">加载中…</span></div>
+    <div class="note" id="note"></div>
+  </div>
+
+  <h2><span class="dot"></span>怎么跟着我走</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="n">01</div>
+      <div class="s">Bookmark 这个网址</div>
+      <div class="x">手机、平板、公司电脑都存一下书签，它就是你的"故事工作台"。</div>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <div class="s">登录你的 GitHub</div>
+      <div class="x">仓库是私有的，页面只对本账号（仓库成员）可见。登录后即可打开。</div>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <div class="s">一键触发 / 看结果</div>
+      <div class="x">点上面的卡片进 GitHub，手动跑或看自动运行，音频进微信。</div>
+    </div>
+  </div>
+
+  <footer>
+    仓库：<a href="https://github.com/yuejingfeng912/bedtime-story-cloud" target="_blank" rel="noopener">yuejingfeng912/bedtime-story-cloud</a>
+    · 本页挂在仓库的 GitHub Pages 上，需登录 GitHub 账号访问<br/>
+    推送：PushPlus → 微信 ｜ 配乐：StepFun 专属生成 ｜ 配音：edge-tts 多角色
+  </footer>
+</div>
+
+<script>
+  const OWNER = "yuejingfeng912";
+  const REPO  = "bedtime-story-cloud";
+
+  // 简易星空
+  (function () {
+    const c = document.getElementById("stars");
+    const ctx = c.getContext("2d");
+    let w, h, stars;
+    function resize() {
+      w = c.width = window.innerWidth;
+      h = c.height = window.innerHeight;
+      stars = Array.from({ length: 120 }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        r: Math.random() * 1.4 + 0.2, a: Math.random() * 0.8 + 0.2,
+        s: Math.random() * 0.02 + 0.004
+      }));
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const s of stars) {
+        s.a += s.s; if (s.a > 1 || s.a < 0.2) s.s *= -1;
+        ctx.globalAlpha = s.a; ctx.fillStyle = "#cdd6ff";
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 7); ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    resize(); window.addEventListener("resize", resize); draw();
+  })();
+
+  // 北京时间格式化
+  function bjTime(iso) {
+    const d = new Date(iso);
+    const t = new Date(d.getTime() + (d.getTimezoneOffset() + 480) * 60000);
+    const p = (n) => String(n).padStart(2, "0");
+    return `${t.getFullYear()}-${p(t.getMonth() + 1)}-${p(t.getDate())} ${p(t.getHours())}:${p(t.getMinutes())}`;
+  }
+  const cn = { schedule: "定时", workflow_dispatch: "手动" };
+  const cls = (c) => c === "success" ? "ok" : (c === "failure" || c === "timed_out") ? "fail" : "warn";
+  const label = (c) => ({ success: "成功", failure: "失败", cancelled: "已取消", timed_out: "超时", skipped: "跳过" }[c] || c || "进行中");
+
+  async function load() {
+    const api = `https://api.github.com/repos/${OWNER}/${REPO}/actions/runs?per_page=5`;
+    try {
+      const r = await fetch(api, { headers: { "Accept": "application/vnd.github+json" } });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const j = await r.json();
+      const runs = (j.workflow_runs || []).filter(x => x.name && x.name.includes("睡前"));
+      if (!runs.length) { renderEmpty(); return; }
+      const last = runs[0];
+      const lastOk = runs.find(x => x.conclusion === "success");
+      const hl = document.getElementById("headline");
+      hl.innerHTML =
+        `<span class="pill ${cls(last.conclusion)}">最近一次：${label(last.conclusion)}</span>` +
+        `<span class="pill muted">${cn[last.event] || last.event} · ${bjTime(last.created_at)}</span>` +
+        (lastOk ? `<span class="pill ok">上次成功：${bjTime(lastOk.created_at)}</span>` : "");
+      const box = document.getElementById("runs");
+      box.innerHTML = runs.slice(0, 5).map(x => `
+        <div class="run">
+          <a href="${x.html_url}" target="_blank" rel="noopener">#${x.run_number} · ${x.display_title || "每日睡前故事"}</a>
+          <span class="meta"><span class="pill ${cls(x.conclusion)}">${label(x.conclusion)}</span> ${cn[x.event] || x.event} · ${bjTime(x.created_at)}</span>
+        </div>`).join("");
+      document.getElementById("note").textContent =
+        "数据来自 GitHub API（公开仓库可直接读；私有仓库需登录后在本页同浏览器内访问 GitHub 才有权限）。";
+    } catch (e) {
+      renderEmpty(e);
+    }
+  }
+
+  function renderEmpty(err) {
+    document.getElementById("headline").innerHTML =
+      `<span class="pill muted">暂无运行记录或无法读取</span>`;
+    document.getElementById("runs").innerHTML = `
+      <div class="note">
+        读取实时状态需要权限：本仓库是私有的，GitHub API 在未登录时返回 401。
+        请先在另一个标签页登录 GitHub，或直接点上方"查看运行状态"卡片进入 Actions 页面。
+        ${err ? `<br/>（技术信息：${err.message}）` : ""}
+      </div>`;
+  }
+
+  load();
+  setInterval(load, 120000); // 每 2 分钟刷新
+</script>
+</body>
+</html>
