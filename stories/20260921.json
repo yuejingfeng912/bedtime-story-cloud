@@ -1,0 +1,440 @@
+{
+ "storyName": "跟着驼铃去远方",
+ "subtitle": "主题：勇气 + 友情　|　背景：历史世界　|　风格：温和亲切 + 生动形象 + 诗意优美",
+ "roles": {
+  "narrator": {
+   "name": "旁白",
+   "type": "narrator"
+  },
+  "yueya": {
+   "name": "月牙",
+   "type": "child"
+  },
+  "lingling": {
+   "name": "铃铃",
+   "type": "young_female"
+  },
+  "aishan": {
+   "name": "艾山",
+   "type": "young_male"
+  },
+  "aye": {
+   "name": "阿爷",
+   "type": "old_male"
+  }
+ },
+ "segments": [
+  {
+   "role": "narrator",
+   "text": "很久很久以前，在很远很远的地方，有一座沙州城。"
+  },
+  {
+   "role": "narrator",
+   "text": "城外的路全是大沙漠，走一趟要三十天。"
+  },
+  {
+   "role": "narrator",
+   "text": "走远路的商队，都要到城门口的驿站歇一夜，第二天再往西走。"
+  },
+  {
+   "role": "narrator",
+   "text": "驿站里养骆驼的，是一位白胡子的阿爷。"
+  },
+  {
+   "role": "narrator",
+   "text": "阿爷身边跟着一个刚满七岁的小孙女，名叫月牙。"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙什么都好，就是怕黑。"
+  },
+  {
+   "role": "narrator",
+   "text": "天一擦黑，她就坐到灯底下，一步也不肯挪。"
+  },
+  {
+   "role": "aye",
+   "text": "“丫头，黑有什么好怕的？”"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙把头摇得像个拨浪鼓。"
+  },
+  {
+   "role": "yueya",
+   "text": "“有。黑里头有东西。”"
+  },
+  {
+   "role": "aye",
+   "text": "“什么东西？”"
+  },
+  {
+   "role": "yueya",
+   "text": "“不知道。所以才更怕。”"
+  },
+  {
+   "role": "narrator",
+   "text": "阿爷没笑她，只把油灯往门口挪了挪。"
+  },
+  {
+   "role": "aye",
+   "text": "“不过阿爷知道，灯往前挪一寸，路就亮一寸。”"
+  },
+  {
+   "role": "narrator",
+   "text": "这天傍晚，城门口忽然热闹起来。"
+  },
+  {
+   "role": "narrator",
+   "text": "骆驼一头跟着一头，脖子上的铃铛叮叮当当地响。"
+  },
+  {
+   "role": "narrator",
+   "text": "队伍最后头，跟着一头小得像影子的驼羔。"
+  },
+  {
+   "role": "narrator",
+   "text": "它腿细细的，走一步，晃三晃。"
+  },
+  {
+   "role": "yueya",
+   "text": "“阿爷你看！那么小！”"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙跑过去，蹲下身子看它。"
+  },
+  {
+   "role": "narrator",
+   "text": "小驼羔低下头，用湿漉漉的鼻子，碰了碰她的手心。"
+  },
+  {
+   "role": "narrator",
+   "text": "照看骆驼的，是个少年，叫艾山。"
+  },
+  {
+   "role": "aishan",
+   "text": "“它叫铃铃。半岁，还没走过长路。”"
+  },
+  {
+   "role": "aishan",
+   "text": "“明天我们就要翻过大沙漠了。”"
+  },
+  {
+   "role": "aishan",
+   "text": "“这一路要走三十天。它可怎么办。”"
+  },
+  {
+   "role": "narrator",
+   "text": "小驼羔听见了，腿抖了一下，往月牙身后躲。"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙伸出手，轻轻摸它的脖子。"
+  },
+  {
+   "role": "yueya",
+   "text": "“铃铃，你也怕黑吗？”"
+  },
+  {
+   "role": "lingling",
+   "text": "“我怕的不是黑。”"
+  },
+  {
+   "role": "lingling",
+   "text": "“我怕沙子。”"
+  },
+  {
+   "role": "lingling",
+   "text": "“风一起，沙子就把路埋了。”"
+  },
+  {
+   "role": "lingling",
+   "text": "“我把头抬得再高，也找不着前面的人。”"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙愣住了。原来小驼羔心里，也藏着一件害怕的事。"
+  },
+  {
+   "role": "narrator",
+   "text": "她想了想，从怀里掏出那只小铜铃——阿爷去年给她系在手腕上的。"
+  },
+  {
+   "role": "yueya",
+   "text": "“给你。走不动的时候摇一摇。”"
+  },
+  {
+   "role": "yueya",
+   "text": "“就当你前面，还有人。”"
+  },
+  {
+   "role": "narrator",
+   "text": "小驼羔看着那只铃铛，眼睛亮了一下，又暗下去。"
+  },
+  {
+   "role": "lingling",
+   "text": "“可是黑的时候，我还是会怕。”"
+  },
+  {
+   "role": "narrator",
+   "text": "这时候，阿爷端着油灯走过来。"
+  },
+  {
+   "role": "aye",
+   "text": "“怕，是好事。”"
+  },
+  {
+   "role": "aye",
+   "text": "“不怕的孩子，是不知道路有多远的。”"
+  },
+  {
+   "role": "aye",
+   "text": "“真正的胆子，不是心里没有怕。”"
+  },
+  {
+   "role": "aye",
+   "text": "“是怕着，还敢往前迈一步。”"
+  },
+  {
+   "role": "narrator",
+   "text": "半夜里，风忽然大了起来。"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙是被一阵铃声吵醒的。"
+  },
+  {
+   "role": "narrator",
+   "text": "那声音又急又乱，不是从骆驼棚里来的，是从外头来的。"
+  },
+  {
+   "role": "narrator",
+   "text": "她光着脚跑到院子里。"
+  },
+  {
+   "role": "narrator",
+   "text": "骆驼棚空了一角——铃铃不见了。"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙站在门口，手心全是汗。"
+  },
+  {
+   "role": "narrator",
+   "text": "往前一步，就是她最怕的黑。"
+  },
+  {
+   "role": "yueya",
+   "text": "“不怕。怕……也往前走一步。”"
+  },
+  {
+   "role": "narrator",
+   "text": "她端起阿爷的油灯，推开了那扇门。"
+  },
+  {
+   "role": "narrator",
+   "text": "出了驿站，月牙才发现，外头的黑跟屋里的不一样。"
+  },
+  {
+   "role": "narrator",
+   "text": "天上的星星数不清，亮得像撒了一地碎盐。"
+  },
+  {
+   "role": "narrator",
+   "text": "沙子被星光照着，泛起一层淡淡的白，像一片睡着的湖。"
+  },
+  {
+   "role": "narrator",
+   "text": "风从沙丘上滑过去，真的像在唱歌。"
+  },
+  {
+   "role": "narrator",
+   "text": "风里，那串铃声忽远忽近。"
+  },
+  {
+   "role": "yueya",
+   "text": "“铃铃——！”"
+  },
+  {
+   "role": "narrator",
+   "text": "她扯着嗓子喊。声音掉进沙子里，没有回音。"
+  },
+  {
+   "role": "narrator",
+   "text": "她翻过一道沙梁，又翻过一道。"
+  },
+  {
+   "role": "narrator",
+   "text": "她累得直喘气，眼泪在眼眶里打转。"
+  },
+  {
+   "role": "yueya",
+   "text": "“我不走了……”"
+  },
+  {
+   "role": "narrator",
+   "text": "就在这时候，风里响了一下。"
+  },
+  {
+   "role": "narrator",
+   "text": "叮——"
+  },
+  {
+   "role": "narrator",
+   "text": "就那么一下。月牙猛地抬起头。"
+  },
+  {
+   "role": "narrator",
+   "text": "声音是从前面那道沙梁背后传来的。"
+  },
+  {
+   "role": "narrator",
+   "text": "她扶着沙子，一步一步往上爬。"
+  },
+  {
+   "role": "narrator",
+   "text": "爬到顶上，她看见了。"
+  },
+  {
+   "role": "narrator",
+   "text": "铃铃陷在一小片软沙里，四条细腿全埋住了，正拼命摇着头上的铃铛。"
+  },
+  {
+   "role": "lingling",
+   "text": "“我走不动了……我找不着前面的人……”"
+  },
+  {
+   "role": "narrator",
+   "text": "小驼羔的声音，抖得不成样子。"
+  },
+  {
+   "role": "yueya",
+   "text": "“我在这儿！”"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙扑下去，把沙子一把一把地往外捧。"
+  },
+  {
+   "role": "narrator",
+   "text": "捧到手指发酸，指甲缝里全是沙。"
+  },
+  {
+   "role": "narrator",
+   "text": "一条腿出来了，又一条腿出来了。"
+  },
+  {
+   "role": "narrator",
+   "text": "最后，小驼羔从沙里站了起来，四条腿还在轻轻地抖。"
+  },
+  {
+   "role": "lingling",
+   "text": "“你怎么敢出来？”"
+  },
+  {
+   "role": "lingling",
+   "text": "“你不是最怕黑吗？”"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙抹了一把脸，笑了。"
+  },
+  {
+   "role": "yueya",
+   "text": "“我还是怕呀。”"
+  },
+  {
+   "role": "yueya",
+   "text": "“可是我听见你的铃响了。”"
+  },
+  {
+   "role": "narrator",
+   "text": "回去的路上，两个小身影挨得很近。月牙捧着灯，铃铃摇着铃。"
+  },
+  {
+   "role": "narrator",
+   "text": "走到驿站门口，阿爷举着一盏灯，站在那儿。"
+  },
+  {
+   "role": "narrator",
+   "text": "那盏灯一点一点的，像一颗落在门口的星星。"
+  },
+  {
+   "role": "aye",
+   "text": "“回来了就好。”"
+  },
+  {
+   "role": "narrator",
+   "text": "阿爷没有骂她，只伸手摸了摸她的头。"
+  },
+  {
+   "role": "aye",
+   "text": "“今天这段路，是你自己走完的。”"
+  },
+  {
+   "role": "narrator",
+   "text": "第二天天还没亮，商队要出发了。"
+  },
+  {
+   "role": "narrator",
+   "text": "艾山把铃铃的驮子系紧，又在它脖子上挂了一只新铃铛。"
+  },
+  {
+   "role": "aishan",
+   "text": "“这是它自己的铃。走夜路的时候，前面的驼队能听见。”"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙把那只小铜铃，塞进了铃铃的驮袋里。"
+  },
+  {
+   "role": "yueya",
+   "text": "“路那么远，你带着它。”"
+  },
+  {
+   "role": "yueya",
+   "text": "“听见它响，就记得，沙州城里有人在等你回来。”"
+  },
+  {
+   "role": "narrator",
+   "text": "铃铃用鼻子蹭了蹭她的脸。很轻，很暖。"
+  },
+  {
+   "role": "narrator",
+   "text": "骆驼一头一头走远了，铃铛声一串一串，慢慢变小。"
+  },
+  {
+   "role": "narrator",
+   "text": "月牙站在门口，一直站到沙子被晒得发烫。她没有哭。"
+  },
+  {
+   "role": "narrator",
+   "text": "因为她知道，那串铃声要去的地方，是很远很远的。"
+  },
+  {
+   "role": "narrator",
+   "text": "故事寓意。"
+  },
+  {
+   "role": "narrator",
+   "text": "害怕不是丢人的事，每个孩子心里，都住着一点点怕。"
+  },
+  {
+   "role": "narrator",
+   "text": "真正的勇气，是一边怕着，一边还愿意往前迈一步。"
+  },
+  {
+   "role": "narrator",
+   "text": "而朋友的那一声铃响，会在最黑的时候告诉你：你不是一个人。"
+  },
+  {
+   "role": "narrator",
+   "text": "天不早了，把被子拉好，闭上眼睛吧。"
+  },
+  {
+   "role": "narrator",
+   "text": "晚安，小宝贝。愿你的梦里，有一串好听的驼铃。"
+  }
+ ]
+}
